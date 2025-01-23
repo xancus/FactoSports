@@ -1,0 +1,111 @@
+.baseButton {
+  border-radius: var(--border-radius);
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-items: center;
+  white-space: nowrap;
+  gap: .125rem;
+  transition: all 110ms ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  font-weight: 500;
+  height: 2.25rem;
+  padding-left: var(--widget-padding);
+  padding-right: var(--widget-padding);
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font-inter);
+}
+
+.inactive {
+  pointer-events: none;
+  opacity: .25;
+}
+.primary {
+  background-color: var(--hover-background);
+}
+
+.primary:hover {
+  filter: brightness(1.1);
+}
+
+.secondary:hover, .cart:hover {
+  background-color: var(--hover-background);
+}
+
+.secondary:hover {
+  filter: brightness(1.1);
+}
+
+.cart, .inactive {
+  justify-content: center;
+}
+
+/*Switch button*/
+.check {
+  position: relative;
+  background: #4bc3c4;/*linear-gradient(90deg, #656364, #4bc3c4);*/
+  line-height: 0;
+  place-content: center;
+  font-size: 1.25rem;
+}
+ 
+.check input[type="checkbox"],
+.check label,
+.check label::before,
+.check label::after {
+  appearance: none;
+  display: inline-block;
+  font-size: inherit;
+  border-radius: 1em;
+  border: 0;
+  transition: .15s ease-in-out;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+ 
+.check {
+  width: fit-content;
+  appearance: none;
+  display: inline-block;
+  border-radius: 1em;
+  border: 0;
+  transition: .15s ease-in-out;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+ 
+.check label {
+  width: 2.75rem;
+  height: 1.25rem;
+  background: #656364;
+  overflow: hidden;
+}
+ 
+.check input[type="checkbox"] {
+  position: absolute;
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  top: 0.25rem;
+  left: 0.25rem;
+  background: linear-gradient(45deg, #dedede, #ffffff);
+  /*box-shadow: 0 6px 7px rgba(0,0,0,0.3);*/
+  outline: none;
+}
+ 
+.check input[type="checkbox"]:checked {
+  left: 1.3em;
+  content: '';
+}
+ 
+.check input[type="checkbox"]:checked + label {
+  background: transparent;
+  content: '';
+}
+
+@media (width >= 640px) {
+.cart, .inactive {
+  max-width: 11rem;
+}
+}

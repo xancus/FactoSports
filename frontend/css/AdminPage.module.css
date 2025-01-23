@@ -1,0 +1,48 @@
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  flex-grow: 1;
+  gap:var(--widget-gap);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--widget-gap);
+  padding: 0 1rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--widget-gap);
+}
+
+.records {
+  border-bottom: 1px solid var(--foreground);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.recordsActions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: .125rem;
+}
+
+
+@media (width >= 1024px) {
+  .main {
+    padding: 0 4rem;
+  }
+}

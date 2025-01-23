@@ -1,0 +1,42 @@
+.sideBar {
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  gap: var(--widget-gap);
+  width: 100%;
+  flex-grow: 1;
+  z-index: 5;
+  overflow-x: hidden;
+  z-index: 10;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--hover-background);
+}
+
+.item {
+  cursor: pointer;
+  padding: .65rem 0;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-items: space-between;
+  justify-content: space-between;
+  transition: all .2s ease-in-out;
+}
+.itemActive {
+  opacity: 1;
+}
+.itemDeactivate {
+  opacity: .6;
+}
+.item:hover {
+  opacity: 1;
+}
+
+@media (width >= 1024px) {
+  .sideBar {
+    padding: 0 4rem;
+  }
+}

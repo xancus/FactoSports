@@ -1,0 +1,57 @@
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+     - '5000:5000'
+    env_file:
+      - './backend/.env'
+    environment:
+      - FLASK_ENV=production
+    depends_on:
+     - db
+    restart: always
+
+  db:
+    container_name: db
+    image: postgres:latest
+    env_file:
+      - './backend/.env'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    restart: always
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    volumes:
+      - ./nginx/certs:/etc/nginx/ssl
+    ports:
+      - '80:80'
+      - '443:443'
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    env_file:
+      - ./frontend/.env
+    restart: always
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data: null

@@ -1,0 +1,55 @@
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+     - '5000:5000'
+    volumes:
+     - './backend:/app'
+    env_file:
+      - './backend/.env.dev'
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+     - db
+    restart: always
+    networks:
+      - practice_app-network
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+      - '443:443'
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+    networks:
+      - practice_app-network
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/app
+      - ./frontend/app/node_modules
+    env_file:
+      - ./frontend/.env.development.local
+    restart: always
+    depends_on:
+      - backend
+    networks:
+      - practice_app-network
+
+volumes:
+  postgres_data: null

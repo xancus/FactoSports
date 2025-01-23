@@ -1,0 +1,137 @@
+@import 'butteruptoasts/src/butterup.css';
+
+:root {
+  --background: #f8f9fa;
+  --foreground: #2c2c2c;
+  --hover-background: #e0e7ef;  
+  --hover-foreground: #2c2c2c; 
+
+  --widget-background: #ffffff; 
+  --error-color: #f01919;
+
+  --header-height: 4rem;
+  --widget-gap: 1.25rem;
+  --widget-padding: 1rem;
+  --border-radius: 0.5rem;
+}
+
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-inter);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-size: 16px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-inter);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+h3 {
+  opacity: .6;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+p {
+  text-wrap: pretty;
+  line-height: 1.25rem;
+}
+
+.littleText{
+  font-size: .75rem;
+  font-weight: bold;
+}
+
+.littleLightText {
+  font-size: .75rem;
+}
+
+.errorLittleText{
+  font-size: .65rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--error-color);
+  padding: .15rem!important;
+  border-radius: var(--border-radius);
+  opacity: .75;
+  white-space: nowrap;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+i {
+  align-self: center;
+  line-height: 0; 
+}
+
+i[role='button'] {
+  cursor: pointer;
+}
+input[type='checkbox'] {
+  flex-basis: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(10px);
+}
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
+}
+.error {
+  color: var(--error-color);
+  font-size: .75rem;
+}
+
+@media (width >= 640px) {
+  :root {
+    --widget-gap: 1.25rem;
+    --widget-padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.32rem;
+  }
+}

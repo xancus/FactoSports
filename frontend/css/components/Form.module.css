@@ -1,0 +1,84 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputContentIcon {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: .5rem;
+  position: relative;
+}
+.inputContent {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  position: relative;
+}
+
+.inputContent > label {
+  font-weight: 500;
+  width: fit-content;
+}
+
+.inputShort {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  position: relative;
+  width: 5rem;
+}
+.input {
+  display: flex;
+  height: 2rem;
+  width: auto;
+  border-radius: 0.375rem;
+  border: 1px solid var(--hover-background);
+  background-color: transparent;
+  padding: 0.25rem 0.75rem;
+  outline: none;
+}
+
+.input:focus-visible {
+  outline: none; 
+  ring: 1px solid var(--hover-background);
+  border-color: var(--hover-background);
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+}
+.checkList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--widget-background);
+  border: 1px solid var(--hover-background);
+  border-radius: 0.375rem;
+  width: max-content;
+  overflow: hidden;
+  top: 1.7rem;
+  padding: var(--widget-padding);
+  z-index: 10;
+}
+.checkList > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  place-self: flex-start;
+  gap: .375rem;
+}
+
+.inputListIndex {
+  border-bottom: 1px solid var(--hover-background);
+  flex-grow: 1;
+}
+.error {
+  color: var(--error-color);
+}

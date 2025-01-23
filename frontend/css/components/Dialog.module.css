@@ -1,0 +1,62 @@
+.dialog {
+  z-index: 50;
+  justify-self: center;
+  align-self: center;
+  background-color: transparent;
+  position: fixed;
+  top:0;left:0;
+  right:0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  align-content: center;
+  display: grid;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-bottom: .5rem;
+}
+
+.content {
+  overflow: overlay;
+  max-height: 75dvh;
+  justify-self: center;
+  width: 100%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--hover-background);
+  max-width: 24rem;
+
+  gap: var(--widget-gap);
+  padding: var(--widget-padding);
+  width: 100%;
+  background-color: var(--widget-background);
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmDialog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--widget-gap)
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--widget-gap);
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .content {
+    max-width: 32rem;
+  }
+}
+
